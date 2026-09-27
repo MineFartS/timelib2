@@ -63,22 +63,23 @@ def sleep(
 
     If show is True, then '#/# seconds' will print to the console each second
     """
-    from ..terminal import ProgressBar
     from time import sleep
+    from tqdm import tqdm
 
     # If show is True
     if show:
 
-        pbar = ProgressBar(s)
+        pbar = tqdm(
+            total = s,
+            dynamic_ncols = True,
+        )
     
         # loop once for each second
         for _ in range(s):
-
             sleep(1)
+            pbar.update()
 
-            pbar.step()
-
-        pbar.stop()
+        pbar.close()
 
     else:
         sleep(s)
