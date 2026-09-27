@@ -6,8 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "timelib2"
 version = "v2026.09.27"
 requires-python = ">=3.12"
-dependencies = [ "python-dateutil", "pytz", "tqdm", ]
+dependencies = [ "python-dateutil", "pytz", "tqdm",]
 
 [tool.setuptools.packages.find]
-exclude = [ "wheelhouse*", "headers*"]
-
+exclude = [ "wheelhouse*", "headers*",]
